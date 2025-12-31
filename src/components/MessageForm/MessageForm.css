@@ -1,0 +1,80 @@
+.message-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.message-form {
+    padding: var(--spacing-8);
+    border-radius: var(--radius-xl);
+}
+
+.form-title {
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-2);
+}
+
+.form-subtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-8);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-6);
+}
+
+.form-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.char-count {
+    text-align: right;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-2);
+}
+
+.form-message {
+    padding: var(--spacing-4);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-4);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.form-message.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-success);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.form-message.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--color-error);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.message-form .btn {
+    width: 100%;
+    padding: var(--spacing-4) var(--spacing-6);
+    font-size: var(--font-size-lg);
+}
+
+@media (max-width: 768px) {
+    .message-form {
+        padding: var(--spacing-4);
+    }
+
+    .form-title {
+        font-size: var(--font-size-2xl);
+    }
+}

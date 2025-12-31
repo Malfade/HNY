@@ -1,0 +1,71 @@
+.lyrics-scroller {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-8);
+    border-radius: var(--radius-xl);
+    max-height: 400px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.lyrics-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
+}
+
+.lyric-line {
+    font-size: var(--font-size-xl);
+    font-weight: 300;
+    color: var(--color-text-muted);
+    text-align: center;
+    transition: all var(--transition-base);
+    opacity: 0.4;
+    transform: scale(0.95);
+    line-height: 1.8;
+    min-height: 1.8em;
+}
+
+.lyric-line.active {
+    font-size: var(--font-size-2xl);
+    font-weight: 500;
+    color: var(--color-primary);
+    opacity: 1;
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.lyric-line.passed {
+    opacity: 0.3;
+}
+
+/* Custom scrollbar for lyrics */
+.lyrics-scroller::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lyrics-scroller::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+}
+
+.lyrics-scroller::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+}
+
+@media (max-width: 768px) {
+    .lyrics-scroller {
+        padding: var(--spacing-4);
+        max-height: 300px;
+    }
+
+    .lyric-line {
+        font-size: var(--font-size-lg);
+    }
+
+    .lyric-line.active {
+        font-size: var(--font-size-xl);
+    }
+}

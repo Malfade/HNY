@@ -1,0 +1,111 @@
+.main-page {
+    min-height: 100vh;
+}
+
+section {
+    padding: var(--spacing-16) 0;
+}
+
+.hero-section {
+    padding: var(--spacing-24) 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-title {
+    font-size: var(--font-size-5xl);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-4);
+    animation: glow 3s ease-in-out infinite;
+}
+
+.hero-subtitle {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-2xl);
+    color: var(--color-secondary);
+    font-style: italic;
+}
+
+.message-section {
+    padding: var(--spacing-12) 0;
+}
+
+.message-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-8);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+}
+
+.message-content p {
+    margin-bottom: var(--spacing-6);
+    color: var(--color-text-secondary);
+}
+
+.message-content p strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.message-content .special-message {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    color: var(--color-primary-light);
+    margin-top: var(--spacing-8);
+    text-align: center;
+}
+
+.message-content .apology {
+    font-style: italic;
+    color: var(--color-accent);
+    text-align: center;
+    font-size: var(--font-size-xl);
+    margin-top: var(--spacing-8);
+}
+
+.photo-section,
+.music-section,
+.lyrics-section,
+.form-section {
+    padding: var(--spacing-12) 0;
+}
+
+.footer {
+    padding: var(--spacing-8) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: var(--spacing-8) 0;
+    }
+
+    .hero-section {
+        padding: var(--spacing-12) 0;
+    }
+
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-xl);
+    }
+
+    .message-content {
+        padding: var(--spacing-4);
+        font-size: var(--font-size-base);
+    }
+
+    .photo-section,
+    .music-section,
+    .lyrics-section,
+    .form-section {
+        padding: var(--spacing-6) 0;
+    }
+}

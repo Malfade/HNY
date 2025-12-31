@@ -1,0 +1,46 @@
+.photo-display {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-4);
+}
+
+.photo-frame {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    transition: all var(--transition-base);
+}
+
+.photo-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.3);
+}
+
+.photo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.photo-frame:hover .photo-image {
+    transform: scale(1.05);
+}
+
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            transparent 50%,
+            rgba(10, 14, 39, 0.3) 100%);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .photo-display {
+        padding: var(--spacing-2);
+    }
+}

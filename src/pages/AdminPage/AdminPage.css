@@ -1,0 +1,146 @@
+.admin-page {
+    min-height: 100vh;
+    padding: var(--spacing-8) 0;
+}
+
+.admin-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--spacing-8);
+    border-radius: var(--radius-xl);
+    text-align: center;
+}
+
+.login-form h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-2);
+}
+
+.login-form .input {
+    margin: var(--spacing-6) 0;
+}
+
+.login-form .btn {
+    width: 100%;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-8);
+    flex-wrap: wrap;
+    gap: var(--spacing-4);
+}
+
+.admin-header h1 {
+    color: var(--color-primary);
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--color-error);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    margin-bottom: var(--spacing-6);
+    text-align: center;
+}
+
+.empty-state {
+    padding: var(--spacing-12);
+    text-align: center;
+    border-radius: var(--radius-xl);
+}
+
+.empty-state p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lg);
+}
+
+.messages-grid {
+    display: grid;
+    gap: var(--spacing-6);
+}
+
+.message-card {
+    padding: var(--spacing-6);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.message-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-4);
+    gap: var(--spacing-4);
+}
+
+.message-name {
+    color: var(--color-primary);
+    font-size: var(--font-size-xl);
+    margin: 0;
+}
+
+.message-date {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin: var(--spacing-1) 0 0 0;
+}
+
+.message-text {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: var(--spacing-2);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.delete-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.delete-btn:hover {
+    color: var(--color-error);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .login-form {
+        margin: 0 var(--spacing-4);
+    }
+}
