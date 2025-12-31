@@ -17,7 +17,6 @@ const MainPage = () => {
             <section className="hero-section fade-in">
                 <div className="container">
                     <h1 className="hero-title">С Новым Годом</h1>
-                    <div className="hero-subtitle">Послание с любовью</div>
                 </div>
             </section>
 
