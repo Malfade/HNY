@@ -21,7 +21,7 @@ const MessageForm = () => {
         e.preventDefault()
 
         if (!formData.message.trim()) {
-            setErrorMessage('Пожалуйста, заполните поле сообщения')
+            setErrorMessage('Пожалуйста, заполни поле сообщения')
             setStatus('error')
             return
         }
@@ -48,7 +48,7 @@ const MessageForm = () => {
         <div className="message-form-container slide-up">
             <form className="message-form glass" onSubmit={handleSubmit}>
                 <h3 className="form-title">Отправить сообщение</h3>
-                <p className="form-subtitle">Оставь свои слова...</p>
+                <p className="form-subtitle">Оставь свои слова</p>
 
                 <div className="form-group">
                     <label htmlFor="message" className="form-label">Твое сообщение</label>
@@ -60,7 +60,7 @@ const MessageForm = () => {
                         onChange={handleChange}
                         maxLength={2000}
                         disabled={status === 'sending'}
-                        placeholder="Напиши что думаешь..."
+                        placeholder="Напиши что думаешь"
                         rows={6}
                     />
                     <div className="char-count">
