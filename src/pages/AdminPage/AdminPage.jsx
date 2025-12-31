@@ -113,7 +113,6 @@ const AdminPage = () => {
                         <div key={message.id} className="message-card glass slide-up">
                             <div className="message-header">
                                 <div>
-                                    <h3 className="message-name">{message.name}</h3>
                                     <p className="message-date">{formatDate(message.timestamp)}</p>
                                 </div>
                                 <button

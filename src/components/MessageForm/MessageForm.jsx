@@ -4,7 +4,6 @@ import './MessageForm.css'
 
 const MessageForm = () => {
     const [formData, setFormData] = useState({
-        name: '',
         message: ''
     })
     const [status, setStatus] = useState('idle') // idle, sending, success, error
@@ -21,8 +20,8 @@ const MessageForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!formData.name.trim() || !formData.message.trim()) {
-            setErrorMessage('Пожалуйста, заполните все поля')
+        if (!formData.message.trim()) {
+            setErrorMessage('Пожалуйста, заполните поле сообщения')
             setStatus('error')
             return
         }
@@ -31,9 +30,9 @@ const MessageForm = () => {
         setErrorMessage('')
 
         try {
-            await sendMessage(formData)
+            await sendMessage({ ...formData, name: 'Аноним' }) // Send default name
             setStatus('success')
-            setFormData({ name: '', message: '' })
+            setFormData({ message: '' })
 
             // Reset success message after 5 seconds
             setTimeout(() => {
@@ -50,21 +49,6 @@ const MessageForm = () => {
             <form className="message-form glass" onSubmit={handleSubmit}>
                 <h3 className="form-title">Отправить сообщение</h3>
                 <p className="form-subtitle">Оставь свои слова...</p>
-
-                <div className="form-group">
-                    <label htmlFor="name" className="form-label">Твое имя</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="input"
-                        value={formData.name}
-                        onChange={handleChange}
-                        maxLength={100}
-                        disabled={status === 'sending'}
-                        placeholder="Как тебя зовут?"
-                    />
-                </div>
 
                 <div className="form-group">
                     <label htmlFor="message" className="form-label">Твое сообщение</label>

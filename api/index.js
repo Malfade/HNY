@@ -114,15 +114,15 @@ export default async function handler(req, res) {
 
             const { name, message } = req.body
 
-            if (!name || !message) {
-                return res.status(400).json({ message: 'Имя и сообщение обязательны' })
+            if (!message) {
+                return res.status(400).json({ message: 'Сообщение обязательно' })
             }
 
-            if (name.length > 100 || message.length > 2000) {
+            if ((name && name.length > 100) || message.length > 2000) {
                 return res.status(400).json({ message: 'Слишком длинное имя или сообщение' })
             }
 
-            const newMessage = await addMessage({ name, message })
+            const newMessage = await addMessage({ name: name || 'Аноним', message })
             return res.status(201).json({
                 success: true,
                 message: 'Сообщение отправлено',

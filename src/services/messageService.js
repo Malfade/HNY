@@ -22,11 +22,11 @@ const sanitizeInput = (input) => {
 export const sendMessage = async (messageData) => {
     try {
         // Validate input
-        if (!messageData.name || !messageData.message) {
-            throw new Error('Имя и сообщение обязательны');
+        if (!messageData.message) {
+            throw new Error('Сообщение обязательно');
         }
 
-        if (messageData.name.length > 100) {
+        if (messageData.name && messageData.name.length > 100) {
             throw new Error('Имя слишком длинное (макс. 100 символов)');
         }
 
@@ -36,7 +36,7 @@ export const sendMessage = async (messageData) => {
 
         // Sanitize input
         const sanitizedData = {
-            name: sanitizeInput(messageData.name.trim()),
+            name: sanitizeInput((messageData.name || 'Аноним').trim()),
             message: sanitizeInput(messageData.message.trim())
         };
 
